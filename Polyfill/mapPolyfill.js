@@ -7,6 +7,9 @@ class Dictionary {
         this.keys.push(key);
         this.values.push(value)
     }
+    values() {
+        return this.values;
+    }
     get(key) {
         const i = this.keys.indexOf(key);
         if (i !== -1) return this.values[i];
@@ -14,7 +17,10 @@ class Dictionary {
     }
     delete(key) {
         const i = this.keys.indexOf(key);
-        if (i !== - 1) this.values.splice(i, 1);
+        if (i !== - 1){
+            this.values.splice(i, 1);
+            this.keys.splice(i, 1);
+        } 
     }
     clear() {
         this.keys = [];
@@ -32,7 +38,7 @@ class Dictionary {
            values: this.values,
            i: 0,
           next() {
-              console.log('i is: ' + this.i)
+              console.log(this.values)
               return this.i < this.keys.length ? {
                   done: false,
                   value: this.values[this.i++]
