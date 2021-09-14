@@ -7,14 +7,11 @@ class Dictionary {
         this.keys.push(key);
         this.values.push(value)
     }
-    values() {
-        return this.values;
-    }
     get(key) {
         const i = this.keys.indexOf(key);
         if (i !== -1) return this.values[i];
         return null;
-    }
+    }   
     delete(key) {
         const i = this.keys.indexOf(key);
         if (i !== - 1){
